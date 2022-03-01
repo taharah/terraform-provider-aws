@@ -56,6 +56,8 @@ EOF
 
 ### Using CORS
 
+~> **NOTE:** The `cors_rule` argument is deprecated in version 4.0 of the Terraform AWS Provider for removal in version 5.0. To independently manage this setting, see the [`aws_s3_bucket_cors_configuration` resource](s3_bucket_cors_configuration.html.markdown).
+
 ```terraform
 resource "aws_s3_bucket" "b" {
   bucket = "s3-website-test.hashicorp.com"
