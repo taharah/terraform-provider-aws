@@ -73,6 +73,8 @@ resource "aws_s3_bucket" "b" {
 
 ### Using versioning
 
+~> **NOTE:** The `versioning` argument is deprecated in version 4.0 of the Terraform AWS Provider for removal in version 5.0. To independently manage this setting, see the [`aws_s3_bucket_versioning` resource](s3_bucket_versioning.html.markdown).
+
 ```terraform
 resource "aws_s3_bucket" "b" {
   bucket = "my-tf-test-bucket"
