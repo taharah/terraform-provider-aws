@@ -86,6 +86,8 @@ resource "aws_s3_bucket" "b" {
 
 ### Enable Logging
 
+~> **NOTE:** The `logging` argument is deprecated in version 4.0 of the Terraform AWS Provider for removal in version 5.0. To independently manage this setting, see the [`aws_s3_bucket_logging` resource](s3_bucket_logging.html.markdown).
+
 ```terraform
 resource "aws_s3_bucket" "log_bucket" {
   bucket = "my-tf-log-bucket"
