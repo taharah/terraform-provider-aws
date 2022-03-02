@@ -162,19 +162,25 @@ func ResourceBucket() *schema.Resource {
 			},
 
 			"website": {
-				Type:     schema.TypeList,
-				Optional: true,
-				MaxItems: 1,
+				Type:       schema.TypeList,
+				Optional:   true,
+				Computed:   true,
+				MaxItems:   1,
+				Deprecated: "Use the aws_s3_bucket_website_configuration resource instead",
 				Elem: &schema.Resource{
 					Schema: map[string]*schema.Schema{
 						"index_document": {
-							Type:     schema.TypeString,
-							Optional: true,
+							Type:       schema.TypeString,
+							Optional:   true,
+							Computed:   true,
+							Deprecated: "Use the aws_s3_bucket_website_configuration resource instead",
 						},
 
 						"error_document": {
-							Type:     schema.TypeString,
-							Optional: true,
+							Type:       schema.TypeString,
+							Optional:   true,
+							Computed:   true,
+							Deprecated: "Use the aws_s3_bucket_website_configuration resource instead",
 						},
 
 						"redirect_all_requests_to": {
@@ -184,12 +190,16 @@ func ResourceBucket() *schema.Resource {
 								"website.0.error_document",
 								"website.0.routing_rules",
 							},
-							Optional: true,
+							Optional:   true,
+							Computed:   true,
+							Deprecated: "Use the aws_s3_bucket_website_configuration resource instead",
 						},
 
 						"routing_rules": {
 							Type:         schema.TypeString,
 							Optional:     true,
+							Computed:     true,
+							Deprecated:   "Use the aws_s3_bucket_website_configuration resource instead",
 							ValidateFunc: validation.StringIsJSON,
 							StateFunc: func(v interface{}) string {
 								json, _ := structure.NormalizeJsonString(v)
@@ -211,14 +221,16 @@ func ResourceBucket() *schema.Resource {
 				Computed: true,
 			},
 			"website_endpoint": {
-				Type:     schema.TypeString,
-				Optional: true,
-				Computed: true,
+				Type:       schema.TypeString,
+				Optional:   true,
+				Computed:   true,
+				Deprecated: "Use the aws_s3_bucket_website_configuration resource instead",
 			},
 			"website_domain": {
-				Type:     schema.TypeString,
-				Optional: true,
-				Computed: true,
+				Type:       schema.TypeString,
+				Optional:   true,
+				Computed:   true,
+				Deprecated: "Use the aws_s3_bucket_website_configuration resource instead",
 			},
 
 			"versioning": {
